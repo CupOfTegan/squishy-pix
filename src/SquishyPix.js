@@ -8,15 +8,15 @@ export default function SquishyPix() {
   const [filesize, setFilesize] = useState(1);
   const [artifacts, setArtifacts] = useState(0);
   const [imageWidth, setImageWidth] = useState(0);
-  
-  const [image, setImage] = useState();
+  const [squishedImage, setSquishedImage] = useState();
+  const [unsquishedImage, setUnsquishedImage] = useState();
   
   return (
     <>
       <Settings filesize={filesize} setFilesize={setFilesize} />
-      <Squisher filesize={filesize} image={image} />
-      <ImageInput image={image} setImage={setImage} />
-      <SquishedImage />
+      <Squisher filesize={filesize} unsquishedImage={unsquishedImage} setSquishedImage={setSquishedImage} />
+      <ImageInput image={unsquishedImage} setImage={setUnsquishedImage} />
+      <SquishedImage squishedImage={squishedImage}/>
     </>
   );
 }
